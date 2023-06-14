@@ -1,0 +1,3217 @@
+Index: src/ch09_Break_Continune/C03_AsalKontol.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch09_Break_Continune/C03_AsalKontol.java b/src/ch09_Break_Continune/C03_AsalKontol.java
+new file mode 100644
+--- /dev/null	(date 1686687425245)
++++ b/src/ch09_Break_Continune/C03_AsalKontol.java	(date 1686687425245)
+@@ -0,0 +1,53 @@
++package ch09_Break_Continune;
++
++import java.util.Scanner;
++
++public class C03_AsalKontol {
++    public static void main(String[] args) {
++
++        //task-> girilen tamsayının asal olmasını kontrol eden code create ediniz
++
++        Scanner input = new Scanner(System.in);
++        System.out.println("bir tamsayi yazin");
++        int sayi = input.nextInt();
++        boolean asalMi = true;
++
++
++        for (int i = 2; i < sayi; i++) {
++
++            if (sayi % i == 0) {
++                System.out.println(sayi + "sayı asal degil");
++                asalMi = false;
++                break;
++            } else if (sayi % i == 1) {
++
++            }
++        }
++
++        if (asalMi && sayi != 1) {
++            System.out.println(sayi + " sayisi asal sayidir");
++        } else System.out.println("asal degil");
++
++
++    }
++}
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	(revision d7b33feb6ba0da9156c8fb421947ed068ff84bbb)
++++ b/.idea/vcs.xml	(date 1686747368124)
+@@ -1,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: src/ch06_SwitchStatement/C04_SwitchCase.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch06_SwitchStatement/C04_SwitchCase.java b/src/ch06_SwitchStatement/C04_SwitchCase.java
+new file mode 100644
+--- /dev/null	(date 1685546582897)
++++ b/src/ch06_SwitchStatement/C04_SwitchCase.java	(date 1685546582897)
+@@ -0,0 +1,57 @@
++package ch06_SwitchStatement;
++
++import java.util.Scanner;
++
++public class C04_SwitchCase {
++    public static void main(String[] args) {
++
++        // Girilen ay numarasına göre kaç gün çektiğini print eden code create ediniz...
++//break in ozelligini kullanin
++//29 subat icin sartlarini hatirlayiniz
++
++        Scanner scan = new Scanner(System.in);
++        System.out.println("bir rakam giriniz");
++        int aySayi = scan.nextInt();
++
++        switch (aySayi) {
++            case 1:
++
++            case 3:
++
++            case 5:
++
++            case 7:
++
++            case 8:
++
++            case 10:
++
++            case 12:
++                System.out.println("girilen ayda 31 gün vardır");
++                break;
++            case 4:
++
++            case 6:
++
++            case 9:
++
++            case 11:
++                System.out.println("girilen ayda 30 gün vardır");
++                break;
++
++            case 2:
++                System.out.println("yılı giriniz");
++                int yıl = scan.nextInt();
++                if (yıl % 4 == 0) {
++                    System.out.println("ay 29 gün çeker");
++                } else
++                    System.out.println("ay 28 gün çeker");
++                break;
++
++            default:
++                System.out.println("doğru yazınız");
++
++
++        }
++    }
++}
+Index: src/ch07_StringManipulations/C04_contains.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch07_StringManipulations/C04_contains.java b/src/ch07_StringManipulations/C04_contains.java
+new file mode 100644
+--- /dev/null	(date 1685564443927)
++++ b/src/ch07_StringManipulations/C04_contains.java	(date 1685564443927)
+@@ -0,0 +1,58 @@
++package ch07_StringManipulations;
++
++import java.util.Scanner;
++
++public class C04_contains {
++
++    public static void main(String[] args) {
++
++        /*
++        String icersinde istenen stringin varlığını kontrol eder boolean return eder..
++
++        */
++
++        String str = "java ile gunler";
++        System.out.println("str = " + str);
++
++        System.out.println("str.contains(\"java\") = " + str.contains("java"));
++        System.out.println("str.contains(\"Java\") = " + str.contains("Java"));
++
++
++        System.out.println("str.contains(\"\") = " + str.contains(""));
++        System.out.println("str.contains(\" \") = " + str.contains(" "));
++
++        System.out.println("\"\".length() = " + "".length());
++
++        // task-> girilen uruunun var olup olmaidginiz kontrol eden bir code create ediniz -> ternary kullanınız
++
++        Scanner input = new Scanner(System.in);
++        System.out.println("bir urun giriniz");
++        String urun = input.nextLine();
++        System.out.println("aranan urunu girin:");
++        String arananUrun = input.nextLine();
++
++        System.out.println(urun.contains(arananUrun) ? " bu urun vardır" : " bu urun yok");
++
++
++        //TASK giirlen sifrenin dogru ise erisim izni verin yanlis ise vermeyin
++        // ternary ile switch ile if ile yapiniz
++        //bug i bulunuz
++        //contains methodu sifre kontrol islemlerinde KULLANILMAMALI
++
++        String sifre = "123456";
++        System.out.println("sifrenizi giriniz");
++        String sifre1 = input.nextLine();
++
++        if (sifre1.contains(sifre)) {
++            System.out.println("giris yaptınız");
++        }else {
++            System.out.println("giris yapamazsınız");
++        }
++
++        System.out.println(sifre1.equals(sifre) ? "giris yaptınız" : "giris yapamazsınız");
++
++
++
++
++    }
++}
+Index: src/ch08_Loops/L01_ForLoop/C01_forLoop.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch08_Loops/L01_ForLoop/C01_forLoop.java b/src/ch08_Loops/L01_ForLoop/C01_forLoop.java
+new file mode 100644
+--- /dev/null	(date 1686687424895)
++++ b/src/ch08_Loops/L01_ForLoop/C01_forLoop.java	(date 1686687424895)
+@@ -0,0 +1,45 @@
++package ch08_Loops.L01_ForLoop;
++
++public class C01_forLoop {
++    public static void main(String[] args) {
++
++        // 33 defa java iyidir yazdır
++
++        for (int i = 0; i <33 ; i++) {
++
++            System.out.println("Java iyidir.");
++        }
++
++        // Task    2 basamaklı tek sayıları yan yana print eden code create ediniz -> 11,13,15...99
++
++        for (int i = 11; i <100 ; i+=2) {
++
++            System.out.print(i);
++        }
++
++        // calismayan loop nasıl yapılır
++
++        for (int i = 1; i >10 ; i++) {
++
++            System.out.println("calismayan loop ");
++        }
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch07_StringManipulations/C09_replace_replaceAll.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch07_StringManipulations/C09_replace_replaceAll.java b/src/ch07_StringManipulations/C09_replace_replaceAll.java
+new file mode 100644
+--- /dev/null	(date 1685733342991)
++++ b/src/ch07_StringManipulations/C09_replace_replaceAll.java	(date 1685733342991)
+@@ -0,0 +1,69 @@
++package ch07_StringManipulations;
++
++import java.util.Scanner;
++
++public class C09_replace_replaceAll {
++
++    public static void main(String[] args) {
++
++        /** replace()
++         * Metin icerisindeki karakter ya da bir parcasinin, istenilen karakter ya da metinle degistirilmesini
++         * (update -set) saglar. Sonuc String'dir..
++         *
++         */
++
++        String str = "ezberlemek beyne ihanettir 12356 ^#^%$ () :";
++
++        System.out.println("str.replace('a', '$') = " + str.replace('a', '$'));
++
++        System.out.println("str.replace(\"tir\", \"dir\") = " + str.replace("tir", "dir"));
++        System.out.println("str.replaceFirst(\"e\", \"*\") = " + str.replaceFirst("e", "*"));
++
++        // replaceAll() method u replace() methoduna benzer ama 2 fark vardır
++        //1-replace() methodu char kabul eder ama replaceAll kabul etmez
++        //2-replaceAll() method u regex kullanımına izin verir (Regular Expressions)
++
++
++        //(Regular Expressions)
++        //   \\s bosluk (
++        //   \\S bosluk disindaki tum karakterler
++        //   \\w harfler ve rakamlar (a z A Z, 0 9)
++        //   \\W harfler ve rakamlar disindaki tum karakterler
++        //   \\d rakamlar 0 9
++        //   \\D rakamlar disindaki tum karakterler
++
++        //   "\\w" tum harf ve rakamlar [A-Z a-z 0-9]
++
++        System.out.println("str.replaceAll(\"\\\\w\", \"*\") = " + str.replaceAll("\\w", "*"));
++        System.out.println("str.replaceAll(\"\\\\W\", \"*\") = " + str.replaceAll("\\W", "*"));
++
++        System.out.println("str.replaceAll(\"[A-Za-z]\" , \"*\") = " + str.replaceAll("[A-Za-z]", "*"));
++
++        //task  Girilen ismini, soyismini ve 16 haneli kredi karti no bilgilerini aşağıdaki
++        // formatta print eden code create ediniz.
++
++        // isim-soyisim : M***** B*******
++        // kart no : **** **** **** 1234
++
++        Scanner input = new Scanner(System.in);
++        System.out.println("lütfen isminizi giriniz:");
++        String name = input.nextLine();
++        System.out.println("lütfen soy isminizi giriniz:");
++        String surName = input.nextLine();
++        System.out.println("lütfen kart numaranızı giriniz:");
++        String cardNumber = input.nextLine();
++
++        String yeniIsimCıktı = name.charAt(0) + name.substring(1).replaceAll("\\w", "*");
++
++        System.out.println("yeniIsimCıktı = " + yeniIsimCıktı);
++
++        String yeniSoyIsimCıktı = surName.charAt(0) + surName.substring(1).replaceAll("\\w", "*");
++        System.out.println("yeniSoyIsimCıktı = " + yeniSoyIsimCıktı);
++
++        String cardNumberYeni = "************" +  cardNumber.substring(12);
++
++        System.out.println("cardNumberYeni = " + cardNumberYeni);
++
++
++    }
++}
+Index: src/ch02_Datatypes_WrappesClass/C01_DataTypes.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch02_Datatypes_WrappesClass/C01_DataTypes.java b/src/ch02_Datatypes_WrappesClass/C01_DataTypes.java
+new file mode 100644
+--- /dev/null	(date 1684872280456)
++++ b/src/ch02_Datatypes_WrappesClass/C01_DataTypes.java	(date 1684872280456)
+@@ -0,0 +1,68 @@
++package ch02_Datatypes_WrappesClass;
++
++public class C01_DataTypes {
++
++    public static void main(String[] args) {
++
++        String name= "Gnc";
++        String yas = "23";
++        int age = 30;
++        int yil = 2023;
++        boolean emeklimi = false;
++        boolean tstermi = true;
++
++        char ch ='$';
++        char harf= 'A';
++        // task
++
++        int dogumyili = 1999;
++        int yas1 = yil - dogumyili ;
++        System.out.println("yas1 = " + yas1);
++
++
++
++        //task
++        byte sayı1=100;
++        byte sayı2=29;
++        byte toplam= (byte) (sayı1+sayı2);
++        System.out.println("toplam = " + toplam);
++
++
++        byte sayı3= 100;
++        byte sayi4= 50;
++        System.out.println(sayı3-sayi4);
++
++        //task
++
++        int a=33;
++        byte b=120;
++
++        System.out.println("a+b = " + a + b);
++        System.out.println("a+b = " + (a + b));
++        //task
++        int sayi5= 10;
++        double sayi6=10.5;
++        System.out.println("sayi6+sayi5 = " + (sayi6 + sayi5));
++         //task
++
++        int num1=28;
++        int num2=34;
++
++        num1=num2;
++        num2=num1;
++
++        System.out.println("num1 = " + num1);
++        System.out.println("num2 = " + num2);
++
++
++    }
++
++
++
++
++
++
++
++
++
++}
+Index: src/ch05_ifStatement_TernaryOperator/Ex03.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch05_ifStatement_TernaryOperator/Ex03.java b/src/ch05_ifStatement_TernaryOperator/Ex03.java
+new file mode 100644
+--- /dev/null	(date 1685390382275)
++++ b/src/ch05_ifStatement_TernaryOperator/Ex03.java	(date 1685390382275)
+@@ -0,0 +1,30 @@
++package ch05_ifStatement_TernaryOperator;
++
++import java.util.Scanner;
++
++public class Ex03 {
++    public static void main(String[] args) {
++                /*
++        girilen bir yılın artık (LEAP YEAR) subat 29 mu olmasını kontrol eden code create ediniz..
++            artık yıl:
++            Kural1: 4 ile bölünemeyen yıllar artık yıl değildir.
++            Kural2: 4 ile bölünüp 100 ile bölünemeyen yıllar artık yıldır.
++            Kural3: 4’ün katı olmasına rağmen 100 ile bölünebilen yıllardan sadece
++            400’ün katı olan yıllar artık yıldır.
++         */
++
++        Scanner input= new Scanner(System.in);
++        System.out.println("\"bir yil giriniz\" = " + "bir yil giriniz");
++        int yil = input.nextInt();
++
++        if ((yil%4==0) && (yil%100 != 0) || (yil%400==0)){
++            System.out.println(yil + "artik yildir");
++        }else System.out.println(yil + "artik yıl degil");
++
++
++
++
++
++
++    }
++}
+Index: src/ch06_SwitchStatement/C03_SwitchCase.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch06_SwitchStatement/C03_SwitchCase.java b/src/ch06_SwitchStatement/C03_SwitchCase.java
+new file mode 100644
+--- /dev/null	(date 1685545868319)
++++ b/src/ch06_SwitchStatement/C03_SwitchCase.java	(date 1685545868319)
+@@ -0,0 +1,68 @@
++package ch06_SwitchStatement;
++
++import java.util.Scanner;
++
++public class C03_SwitchCase {
++
++    public static void main(String[] args) {
++
++        // TASK -> kullanıcının girdiği yılın ay sırasına göre ayın ismini print eden code create ediniz
++
++        Scanner input = new Scanner(System.in);
++        System.out.println("ay numrasi gir");
++        int ay = input.nextInt();
++
++        switch (ay) {
++            case 1:
++                System.out.println("ocak");
++                break;
++            case 2:
++                System.out.println("subat");
++                break;
++            case 3:
++                System.out.println("mart");
++                break;
++            case 4:
++                System.out.println("nisan");
++                break;
++            case 5:
++                System.out.println("mayis");
++                break;
++            case 6:
++                System.out.println("haziran");
++                break;
++            case 7:
++                System.out.println("temmuz");
++                break;
++            case 8:
++                System.out.println("agustos");
++                break;
++            case 9:
++                System.out.println("eylul");
++                break;
++            case 10:
++                System.out.println("ekim");
++                break;
++            case 11:
++                System.out.println("kasim");
++                break;
++            case 12:
++                System.out.println("aralık");
++                break;
++            default:
++                System.out.println("0 12 arasi nir numara giriniz");
++
++        }
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch06_SwitchStatement/C02_SwitchStatement.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch06_SwitchStatement/C02_SwitchStatement.java b/src/ch06_SwitchStatement/C02_SwitchStatement.java
+new file mode 100644
+--- /dev/null	(date 1685545201800)
++++ b/src/ch06_SwitchStatement/C02_SwitchStatement.java	(date 1685545201800)
+@@ -0,0 +1,80 @@
++package ch06_SwitchStatement;
++
++import java.util.Scanner;
++
++public class C02_SwitchStatement {
++    public static void main(String[] args) {
++
++        /*
++   Switch Case deyimi islev bakimindan if deyimine çok benzemektedir.
++   Çok sayida if islem bloklari kullandigimizda programin okunurlugu azalacak ve
++   programi izlemek zorlasacaktir.
++    Programimizin bir degerini bir çok degerle
++   karsilastirmak gerektiginde switch komutunu kullanacagiz. Switch seçenegi
++   ile degiskenin durumuna göre bir çok durum içersinden bir tanesi gerçeklestirilir.
++   Istersek de if deyimi ile switch case'' yi birlikte kullanabiliriz.
++   Switch in yaptigi is kisaca, ifadenin degerini sirayla sabitlerle karsilastirarak ve her satiri islemektir.
++   çok sayıda koşul içeren durumlarda switch kullanmak if'e göre programınızın daha hızlı çalışmasını sağlıyor.
++   Bunun haricinde iki koşul ifadesi arasında dikkate değer bir performans farklılığı bulunmuyor.
++
++ahan da TRICK-> Switch Statement'de long,double,float ve boolean asla KULLANILMAZZZ.. CISSS
++         Switch de sadece int, byte, short, char, String data tipleri kullanilabilir
++       Eger 3 den fazla durum varsa switch() tercih edilir.
++*/
++        // TASK -> kullanıcının girdiği rakamı yazı ile print eden code create ediniz.
++        //input 1
++        //output bir
++
++        Scanner input = new Scanner(System.in);
++        System.out.println("rakam gir");
++        int rakam = input.nextInt();
++
++        switch (rakam) {
++            case 0:
++                System.out.println("sifir");
++                break;
++            case 1:
++                System.out.println("bir");
++                break;
++            case 2:
++                System.out.println("iki");
++                break;
++            case 3:
++                System.out.println("uc");
++                break;
++            case 4:
++                System.out.println("dort");
++                break;
++            case 5:
++                System.out.println("bes");
++                break;
++            case 6:
++                System.out.println("altı");
++                break;
++            case 7:
++                System.out.println("yedi");
++                break;
++            case 8:
++                System.out.println("sekiz");
++                break;
++            case 9:
++                System.out.println("dokuz");
++                break;
++            default:
++                System.out.println("bu bir rakam degil");
++        }
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch08_Loops/L01_ForLoop/C05_PatternQuestion.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch08_Loops/L01_ForLoop/C05_PatternQuestion.java b/src/ch08_Loops/L01_ForLoop/C05_PatternQuestion.java
+new file mode 100644
+--- /dev/null	(date 1686687424975)
++++ b/src/ch08_Loops/L01_ForLoop/C05_PatternQuestion.java	(date 1686687424975)
+@@ -0,0 +1,53 @@
++package ch08_Loops.L01_ForLoop;
++
++public class C05_PatternQuestion {
++
++    public static void main(String[] args) {
++
++        /*
++        A
++        A B
++        A B C
++        A B C D
++        A B C D E
++        A B C D E F
++        şeklini yazdırınız.  65=A'nın ascıı değeri
++
++                */
++
++        int n = 65;
++
++        for (int i = 0; i <6; i++) {
++
++            for (int j = 0; j <= i; j++) {
++                System.out.print((char) (n + j) + " ");
++            }
++
++            System.out.println();  // Satır sonu
++
++        }
++
++        for (int i = 1; i <= 6; i++) {
++            for (int j = 1; j <= i; j++) {
++                System.out.print("*");
++            }
++            System.out.println();
++        }
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch08_Loops/L03_DoWhileLoop/C02_doWhileLoop.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch08_Loops/L03_DoWhileLoop/C02_doWhileLoop.java b/src/ch08_Loops/L03_DoWhileLoop/C02_doWhileLoop.java
+new file mode 100644
+--- /dev/null	(date 1686687424950)
++++ b/src/ch08_Loops/L03_DoWhileLoop/C02_doWhileLoop.java	(date 1686687424950)
+@@ -0,0 +1,42 @@
++package ch08_Loops.L03_DoWhileLoop;
++
++import java.util.Scanner;
++
++public class C02_doWhileLoop {
++
++    public static void main(String[] args) {
++
++        //task-> girilen sayı 17 den kucuk ise "kazandınız" print eden  değilse ise sayı girişi isteyen
++        //  code create ediniz...
++        Scanner input = new Scanner(System.in);
++        System.out.println("bir tamsayi yazin");
++        int sayi ;
++
++        do {
++            System.out.println("sayi gir");
++            sayi=input.nextInt();
++
++        }while (sayi>=17);
++
++        System.out.println("kazandiniz");
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: MyJavaTutorial.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/MyJavaTutorial.iml b/MyJavaTutorial.iml
+--- a/MyJavaTutorial.iml	(revision d7b33feb6ba0da9156c8fb421947ed068ff84bbb)
++++ b/MyJavaTutorial.iml	(date 1686747324871)
+@@ -1,0 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: src/ch07_StringManipulations/C07_indexOf_lastIndexOf.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch07_StringManipulations/C07_indexOf_lastIndexOf.java b/src/ch07_StringManipulations/C07_indexOf_lastIndexOf.java
+new file mode 100644
+--- /dev/null	(date 1685650383371)
++++ b/src/ch07_StringManipulations/C07_indexOf_lastIndexOf.java	(date 1685650383371)
+@@ -0,0 +1,65 @@
++package ch07_StringManipulations;
++
++import java.util.Scanner;
++
++public class C07_indexOf_lastIndexOf {
++
++    public static void main(String[] args) {
++
++        /** indexOf()
++                * char karakter ya da String metnin kacinci indexden basladigini veren bir method dur. Sonuc integer dir.
++                * Bu method index'i sorulan char'in String icindeki ilk gorunumunun index'ini return eder
++        contains den farkı indexini verir, contains ise true false
++
++                */
++
++        String str= "all is well";
++        System.out.println("str.indexOf(\"a\") = " + str.indexOf("a"));
++        System.out.println("str.indexOf(\"l\") = " + str.indexOf("l"));
++        System.out.println("str.indexOf(\"L\") = " + str.indexOf("L"));
++        System.out.println("str.indexOf(\"all\") = " + str.indexOf("all"));
++        System.out.println("str.indexOf(\"is\") = " + str.indexOf("is"));
++
++        System.out.println("str.indexOf(\"alL\") = " + str.indexOf("alL"));
++
++
++        /** lastIndexOf()
++                *  String içinde aranan karakter(ler)in sondan itibaren ilk indexini verır
++                *  indexOf un sondan olan hali fakat index numaraları değişmez.
++                *  lastIndexOf() Method'u index'i sorulan character'in son gorunumunun index'ini return eder.
++                *  indexOf() methodunda birden fazla character'in index'i sorulursa ilk character'in index'i return edilir.
++                */
++
++        String name= "Jack Nicholson";
++        System.out.println("name.indexOf(\"o\") = " + name.indexOf("o"));
++        System.out.println("name.lastIndexOf(\"o\") = " + name.lastIndexOf("o"));
++
++        System.out.println("name.indexOf(\"k\") = " + name.indexOf("k"));
++        System.out.println("name.lastIndexOf(\"k\") = " + name.lastIndexOf("k"));
++
++        /*
++        task
++        Girilen cümlenin aşağıdaki durumları sağlayacak code create ediniz
++
++        1-Girilen cumle java icermiyor
++        2-Girilen cumle 1 tane java iceriyor
++        3-Girilen cumlede birden fazla java var
++                */
++
++        Scanner input = new Scanner(System.in);
++        System.out.println("  bir cümle giirin");
++        String cumle= input.nextLine().toLowerCase();
++
++        if (cumle.indexOf("java") == -1){
++            System.out.println("Girilen cümle Java içermiyor.");
++        }else if (cumle.indexOf("java") != cumle.lastIndexOf("java")){
++            System.out.println("Girilen cümlede birden fazla java var.");
++        }else {
++            System.out.println("Girilen cümlede bir tane java içeriyor.");
++        }
++
++
++
++
++    }
++}
+Index: src/ch08_Loops/L02_WhileLoop/C02_whileLoop.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch08_Loops/L02_WhileLoop/C02_whileLoop.java b/src/ch08_Loops/L02_WhileLoop/C02_whileLoop.java
+new file mode 100644
+--- /dev/null	(date 1686687425011)
++++ b/src/ch08_Loops/L02_WhileLoop/C02_whileLoop.java	(date 1686687425011)
+@@ -0,0 +1,40 @@
++package ch08_Loops.L02_WhileLoop;
++
++import java.util.Scanner;
++
++public class C02_whileLoop {
++
++    public static void main(String[] args) {
++
++
++        Scanner input = new Scanner(System.in);
++        System.out.println("bir tamsayi yazin");
++        int sayi = input.nextInt();
++
++        int bolen =1;
++        int bolenSayısı= 0;
++
++        while (bolen<=sayi) {
++            if (sayi % bolen == 0) {
++                bolenSayısı++;
++
++            }
++            bolen++;
++        }
++        System.out.println(bolenSayısı);
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch09_Break_Continune/C04_PinControl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch09_Break_Continune/C04_PinControl.java b/src/ch09_Break_Continune/C04_PinControl.java
+new file mode 100644
+--- /dev/null	(date 1686687424999)
++++ b/src/ch09_Break_Continune/C04_PinControl.java	(date 1686687424999)
+@@ -0,0 +1,34 @@
++package ch09_Break_Continune;
++
++import java.util.Scanner;
++
++public class C04_PinControl {
++    public static void main(String[] args) {
++
++        // Task -> String data type bir pin datasının 3 giriş hakkında kontrol eden code create ediniz.
++
++        Scanner input1 = new Scanner(System.in);
++        int girisHakki = 3;
++        String sifre = "gnc12345";
++
++        while (true) {
++            System.out.println(" pin giriniz:");
++            String pin = input1.nextLine();
++            if (sifre.equals(pin)) {
++                System.out.println("sifre eslesti");
++                break;
++            } else {
++                System.out.println("sifre yanlis tekrar dene");
++                girisHakki--;
++                System.out.println("kalan hakkın = " + girisHakki);
++            }
++
++            if (girisHakki == 0) {
++                System.out.println("bloke oldun");
++                break;
++            }
++
++
++        }
++    }
++}
+Index: src/ch08_Loops/L03_DoWhileLoop/C01_doWhileLoop.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch08_Loops/L03_DoWhileLoop/C01_doWhileLoop.java b/src/ch08_Loops/L03_DoWhileLoop/C01_doWhileLoop.java
+new file mode 100644
+--- /dev/null	(date 1686687425021)
++++ b/src/ch08_Loops/L03_DoWhileLoop/C01_doWhileLoop.java	(date 1686687425021)
+@@ -0,0 +1,44 @@
++package ch08_Loops.L03_DoWhileLoop;
++
++public class C01_doWhileLoop {
++
++    public static void main(String[] args) {
++
++           /*
++        While loop-> önce sart konrol edilir eğer  sart sonucu true alınırsa body action çalışır
++        do-While loop-> önce body action çalışır sonra şart kontrol edilir.Sart true ise döngü devam eder.
++        sart false ise döngü lırılır ve döngüden sonraki ilk satır çalışır.
++        do-While loop->  game app. de daha çok kullanılır.
++        Trick: while loop sart sağlanmazsa hiç çaılşmayabilir ama do-while sart sağalasın sağlamasın
++        en az bir kez çalışır..
++         */
++
++        //yas 18 den buyukse girebilsin degilse giremesin
++        int yas = 15;
++
++        while (yas > 18 ){
++            System.out.println("girebilirsin while");
++            yas --;
++        }
++
++        do {
++            System.out.println("girebilirsinin do while");
++            yas--;
++        }while (yas > 18);
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch02_Datatypes_WrappesClass/C03_Concatination.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch02_Datatypes_WrappesClass/C03_Concatination.java b/src/ch02_Datatypes_WrappesClass/C03_Concatination.java
+new file mode 100644
+--- /dev/null	(date 1684951453505)
++++ b/src/ch02_Datatypes_WrappesClass/C03_Concatination.java	(date 1684951453505)
+@@ -0,0 +1,26 @@
++package ch02_Datatypes_WrappesClass;
++
++public class C03_Concatination {
++
++    public static void main(String[] args) {
++
++        char ch= 'A';
++        char ch2= 'C';
++        System.out.println(ch + ch2);
++        System.out.println('A'+ 'C');
++        System.out.println("A" + "B");
++
++        String name = "kemal";
++        String lastname = "baba";
++
++        int a =8;
++        int b = 11;
++
++        System.out.println(name + lastname + a + b);
++        System.out.println(a+b+ name+ lastname);
++
++        System.out.println(name+lastname+(a+b));
++
++
++    }
++}
+Index: src/ch04_JavaOperators/jo01_ArithmeticOperators/C02_IncrementDecrement.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch04_JavaOperators/jo01_ArithmeticOperators/C02_IncrementDecrement.java b/src/ch04_JavaOperators/jo01_ArithmeticOperators/C02_IncrementDecrement.java
+new file mode 100644
+--- /dev/null	(date 1685041605699)
++++ b/src/ch04_JavaOperators/jo01_ArithmeticOperators/C02_IncrementDecrement.java	(date 1685041605699)
+@@ -0,0 +1,24 @@
++package ch04_JavaOperators.jo01_ArithmeticOperators;
++
++public class C02_IncrementDecrement {
++
++    public static void main(String[] args) {
++
++        int number =7;
++
++        System.out.println(++number);
++        System.out.println("number = " + number);
++        System.out.println(number++);
++        System.out.println("number = " + number);
++
++        System.out.println(number++  +  ++number);
++
++        System.out.println("number = " + number);
++
++        System.out.println(number++ + number++);
++
++        System.out.println("number = " + number);
++
++
++    }
++}
+Index: src/ch02_Datatypes_WrappesClass/C04_WrapperClass.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch02_Datatypes_WrappesClass/C04_WrapperClass.java b/src/ch02_Datatypes_WrappesClass/C04_WrapperClass.java
+new file mode 100644
+--- /dev/null	(date 1684955436553)
++++ b/src/ch02_Datatypes_WrappesClass/C04_WrapperClass.java	(date 1684955436553)
+@@ -0,0 +1,28 @@
++package ch02_Datatypes_WrappesClass;
++
++public class C04_WrapperClass {
++    public static void main(String[] args) {
++
++        String name = " gnc";
++        int age = 30;
++
++        System.out.println(name.toUpperCase());
++
++        Integer age2 = 32;
++
++        String number = "12345";
++
++        String tc ="123456789";
++        String id="123456";
++        System.out.println(tc + id);
++
++        System.out.println(Integer.valueOf(tc));
++        System.out.println(Integer.valueOf(id));
++
++
++
++
++
++
++    }
++}
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+--- a/.idea/.gitignore	(revision d7b33feb6ba0da9156c8fb421947ed068ff84bbb)
++++ b/.idea/.gitignore	(date 1686747329305)
+@@ -1,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: src/ch05_ifStatement_TernaryOperator/Ex02.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch05_ifStatement_TernaryOperator/Ex02.java b/src/ch05_ifStatement_TernaryOperator/Ex02.java
+new file mode 100644
+--- /dev/null	(date 1685385794795)
++++ b/src/ch05_ifStatement_TernaryOperator/Ex02.java	(date 1685385794795)
+@@ -0,0 +1,37 @@
++package ch05_ifStatement_TernaryOperator;
++
++import java.util.Scanner;
++
++public class Ex02 {
++
++    public static void main(String[] arGS)    {
++    /*
++        Kullanicidan 100 uzerinden notunu isteyin.
++        Not'u harf sistemine cevirip yazdirin.
++        50’den kucukse "D",->1,2,3..49
++        =50  <60 arasi "C",->50,51,52,..59
++        =60  <80 arasi "B",->60,61,62,63..79
++        =80’nin uzerinde ise "A"->80,81..100
++        */
++        Scanner input= new Scanner(System.in);
++        System.out.println("ders notunuzu giriniz:");
++        int not=input.nextInt();
++
++        if (not<0){
++            System.out.println("girdiginiz not gecersiz");
++        } else if (not<50) {
++            System.out.println("ders notunuz D");
++        } else if (not>=50 && not<60) {
++            System.out.println("ders notunuz C ");
++        } else if (not>=60 && not<80) {
++            System.out.println("ders notunuz B");
++        } else if (not>=80 && not<=100) {
++            System.out.println("ders notunuz A");
++        } else {
++            System.out.println("girdiginiz not 100 den büyük");
++        }
++
++
++    }
++}
++
+Index: .idea/codeStyles/codeStyleConfig.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/codeStyles/codeStyleConfig.xml b/.idea/codeStyles/codeStyleConfig.xml
+--- a/.idea/codeStyles/codeStyleConfig.xml	(revision d7b33feb6ba0da9156c8fb421947ed068ff84bbb)
++++ b/.idea/codeStyles/codeStyleConfig.xml	(date 1686747324996)
+@@ -1,0 +1,5 @@
++<component name="ProjectCodeStyleConfiguration">
++  <state>
++    <option name="PREFERRED_PROJECT_CODE_STYLE" value="Default" />
++  </state>
++</component>
+\ No newline at end of file
+Index: src/ch05_ifStatement_TernaryOperator/c03_TernaryOperator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch05_ifStatement_TernaryOperator/c03_TernaryOperator.java b/src/ch05_ifStatement_TernaryOperator/c03_TernaryOperator.java
+new file mode 100644
+--- /dev/null	(date 1685387756225)
++++ b/src/ch05_ifStatement_TernaryOperator/c03_TernaryOperator.java	(date 1685387756225)
+@@ -0,0 +1,68 @@
++package ch05_ifStatement_TernaryOperator;
++
++import java.util.Scanner;
++
++public class c03_TernaryOperator {
++    public c03_TernaryOperator() {
++        super();
++    }
++
++    public static void main(String[] args) {
++
++        int a=3;
++
++        if (a>0){
++            System.out.println("sayi pozitif");
++        }else{
++            System.out.println("sayi negatif");
++        }
++
++        // ternary
++
++        String sonuc = a>0 ? "pozitif" : "negatif";
++        System.out.println(sonuc);
++
++        // atama olmadan
++        System.out.println("atma yapmadan sonuc");
++        System.out.println( a>0 ? "pozitif" : "negatif ");
++
++        //Example 2: Iki sayidan kucuk olani secen kodu yaziniz ternary kullaniniz
++
++        int x=3;
++        int y=5;
++
++        System.out.println( x>y? "x büyük" : "y büyük");
++        int min = x >y ? y: x;
++        System.out.println("min = " + min);
++
++        //Example 3: Verilen bir sayinin mutlak degerini hesaplayan kodu yaziniz
++//           Pozitif sayilarin ve sifirin mutlak degeri kendileridir.
++//           Negatif sayilarin mutlak degeri -1 ile carpilmis halleridir.
++
++        Scanner input= new Scanner(System.in);
++        System.out.println("bir sayi giriniz:");
++        int d = input.nextInt();
++        int abs= d>0 ? d : (-1*d);
++        System.out.println("abs = " + abs);
++
++        //Example 4: Iki tane sayi ayni isaretli ise bu sayilari carpiniz, // return type int
++        // farkli isaretli ise "Islem yapamam" mesaji veriniz             //return type String
++
++        System.out.println("bir sayi giriniz");
++        int sayi1= input.nextInt();
++        System.out.println("bir sayi giriniz");
++        int sayi2= input.nextInt();
++
++        Object obj =(sayi1>0 && sayi2>0 ) || (sayi1<0 && sayi2<0) ? (sayi1*sayi2) : "Islem yapamam" ;
++        System.out.println("obj = " + obj);
++
++        // TASK01 -> girilen bir tamsayının tek-çift olmasını kontrol eden code create ediniz.
++
++        System.out.println("bir sayi giriniz");
++        int sayi3= input.nextInt();
++        String sonuc1 =(sayi3%2==0 ? "cift" : "tek");
++        System.out.println("sonuc1 = " + sonuc1);
++
++
++    }
++}
+Index: src/ch08_Loops/L01_ForLoop/C02_forLoop.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch08_Loops/L01_ForLoop/C02_forLoop.java b/src/ch08_Loops/L01_ForLoop/C02_forLoop.java
+new file mode 100644
+--- /dev/null	(date 1686687424917)
++++ b/src/ch08_Loops/L01_ForLoop/C02_forLoop.java	(date 1686687424917)
+@@ -0,0 +1,41 @@
++package ch08_Loops.L01_ForLoop;
++
++import java.util.Scanner;
++
++public class C02_forLoop {
++    public static void main(String[] args) {
++        System.out.println("bir sayi giriniz");
++        Scanner input = new Scanner(System.in);
++        int sayi = input.nextInt();
++
++
++
++
++            if ( sayi<0) {
++                System.out.println("pozitif bir sayi girmelisin");
++            }else {
++                for (int i= sayi; i<100 ; i++) {
++                    if ( i %4 ==0)  {
++
++                        System.out.println(i);
++                    }
++                }
++
++            }
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch09_Break_Continune/C02_continue.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch09_Break_Continune/C02_continue.java b/src/ch09_Break_Continune/C02_continue.java
+new file mode 100644
+--- /dev/null	(date 1686687424886)
++++ b/src/ch09_Break_Continune/C02_continue.java	(date 1686687424886)
+@@ -0,0 +1,51 @@
++package ch09_Break_Continune;
++
++import java.util.Scanner;
++
++public class C02_continue {
++
++    public static void main(String[] args) {
++
++        /*
++        Program, bir loop içerisinde continue komutu ile karşılaşılırsa,
++        ondan sonraki komutlara
++        atlar ve loop'un bir sonraki değerinden devam eder.
++
++                */
++
++        // Task-> girilen bir mail hesabındaki ' ' karakterlerini handle ederek print eden code cerate ediniz.
++
++        Scanner input= new Scanner(System.in);
++        System.out.println(" email adresinizi girin:");
++        String mail=input.nextLine();
++
++        for (int i=0; i< mail.length(); i++) {
++            if (mail.charAt(i)==' ') {
++                continue;
++
++            }
++            System.out.print(mail.charAt(i));
++        }
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch06_SwitchStatement/C01_SwitchCase.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch06_SwitchStatement/C01_SwitchCase.java b/src/ch06_SwitchStatement/C01_SwitchCase.java
+new file mode 100644
+--- /dev/null	(date 1685544527082)
++++ b/src/ch06_SwitchStatement/C01_SwitchCase.java	(date 1685544527082)
+@@ -0,0 +1,86 @@
++package ch06_SwitchStatement;
++
++import java.util.Scanner;
++
++public class C01_SwitchCase {
++
++    public static void main(String[] args) {
++
++        Scanner input = new Scanner(System.in);
++        System.out.println("rakam gir");
++        int rakam = input.nextInt();
++
++
++        if (rakam == 0) {
++            System.out.println("sifir");
++        }else if (rakam==1) {
++            System.out.println("bir");
++        }else if (rakam==2) {
++            System.out.println("iki");
++        }else {
++            System.out.println("0 ile 2 arasında bir rakam girmelisin");
++        }
++
++        // switch
++
++        switch (rakam) {
++            case 0:
++                System.out.println("sifir");
++                break;
++            case 1 :
++                System.out.println("bir");
++                break;
++            case 2 :
++                System.out.println("iki");
++                break;
++            default :
++                System.out.println("0 ile 2 arasında bir rakam girmelisin");
++        }
++
++        // switch örnegi
++
++        System.out.println(" ana menu icin A \nurun gostermek ıcın B eklemek icin C\n cikis icin Q ya basiniz");
++        String islem = input.next().toUpperCase();
++
++        switch (islem) {
++            case "A":
++                System.out.println("ana menuye hosgeldin");
++                break;
++            case "B":
++                System.out.println("hangi urunleri gormek istersin");
++                break;
++            case "C":
++                System.out.println("hangi urunleri eklemek istersin");
++                break;
++            case "Q":
++                System.out.println("cikis isleminiz yapiliyor");
++                break;
++
++        }
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++
++
++
++}
+Index: src/ch01_variables/C01_Variables.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch01_variables/C01_Variables.java b/src/ch01_variables/C01_Variables.java
+new file mode 100644
+--- /dev/null	(date 1684864890576)
++++ b/src/ch01_variables/C01_Variables.java	(date 1684864890576)
+@@ -0,0 +1,46 @@
++package ch01_variables;
++
++public class C01_Variables {
++
++    public static void main(String[] args) {
++
++        String isim = "Sefa";
++        int yas = 33;
++        boolean ogrencimi = true ;
++        System.out.println(isim+" "+yas+" "+ogrencimi);
++        System.out.println("isim = " + isim);
++        System.out.println(isim);
++        System.out.printf("", isim);
++
++
++        String isim1="sefa ";
++        int yas2= 30;
++        double maas= 25000;
++
++        System.out.println("isim1 = " + isim1);
++        System.out.println("yas2 = " + yas2);
++        System.out.println("maas = " + maas);
++
++        int maas1;
++        maas1=12;
++        System.out.println("maas1 = " + maas1);
++
++        // basit yol
++
++        String name= "sefa", surname="genc";
++        int age=30, salary= 30000;
++        System.out.println("name = " + name);
++        System.out.println("surname = " + surname);
++        System.out.println("age = " + age);
++        System.out.println("salary = " + salary);
++
++    }
++
++
++
++
++
++
++
++
++}
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+--- a/.idea/modules.xml	(revision d7b33feb6ba0da9156c8fb421947ed068ff84bbb)
++++ b/.idea/modules.xml	(date 1686747324917)
+@@ -1,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/MyJavaTutorial.iml" filepath="$PROJECT_DIR$/MyJavaTutorial.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: src/ch04_JavaOperators/jo03_ComparisonOperators/C01_ComparisonOperators.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch04_JavaOperators/jo03_ComparisonOperators/C01_ComparisonOperators.java b/src/ch04_JavaOperators/jo03_ComparisonOperators/C01_ComparisonOperators.java
+new file mode 100644
+--- /dev/null	(date 1685044570081)
++++ b/src/ch04_JavaOperators/jo03_ComparisonOperators/C01_ComparisonOperators.java	(date 1685044570081)
+@@ -0,0 +1,14 @@
++package ch04_JavaOperators.jo03_ComparisonOperators;
++
++public class C01_ComparisonOperators {
++    public static void main(String[] args) {
++
++        int yas1 = 34;
++        int yas2 = 55;
++
++        System.out.println("yas1==yas2 = " + (yas1 == yas2));
++        System.out.println(yas1 != yas2);
++
++
++    }
++}
+Index: src/ch01_variables/HelloWorld.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch01_variables/HelloWorld.java b/src/ch01_variables/HelloWorld.java
+new file mode 100644
+--- /dev/null	(date 1684785459138)
++++ b/src/ch01_variables/HelloWorld.java	(date 1684785459138)
+@@ -0,0 +1,26 @@
++package ch01_variables;
++
++public class HelloWorld {
++
++    public static void main(String[] args) {
++        // JVM ilk önce statik yapıları calıstırır.
++        // eger statik yapı sadece metodda vara ise önce önce main metodu bulur ve run eder
++
++       // System.out.println("Hello World"); // bu kod konsola yazdırma için kullanılır
++
++        /*
++        yorum birden fazla ise bu kullanılır
++        ctrl+d bulundugunuz satırı bir alt satıra dublicate eder
++        ctrl+d bulundugunuz satırı bir alt satıra dublicate eder
++         */
++        System.out.println("Ad Soyad: Sefa Genç");
++        System.out.println("Memleket: Samsun");
++        System.out.println("Yas: 30");
++        System.out.println("Meslek: Tester ");
++
++
++
++    }
++
++
++}
+Index: src/ch04_JavaOperators/jo01_ArithmeticOperators/C04_MathMethods.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch04_JavaOperators/jo01_ArithmeticOperators/C04_MathMethods.java b/src/ch04_JavaOperators/jo01_ArithmeticOperators/C04_MathMethods.java
+new file mode 100644
+--- /dev/null	(date 1685043835689)
++++ b/src/ch04_JavaOperators/jo01_ArithmeticOperators/C04_MathMethods.java	(date 1685043835689)
+@@ -0,0 +1,12 @@
++package ch04_JavaOperators.jo01_ArithmeticOperators;
++
++public class C04_MathMethods {
++    public static void main(String[] args) {
++
++        int a =9;
++        System.out.println("Math.pow(a,2) = " + Math.pow(a, 2));
++        System.out.println("Math.sqrt(a) = " + Math.sqrt(a));
++
++
++    }
++}
+Index: src/ch07_StringManipulations/C01_Concatination.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch07_StringManipulations/C01_Concatination.java b/src/ch07_StringManipulations/C01_Concatination.java
+new file mode 100644
+--- /dev/null	(date 1685558100789)
++++ b/src/ch07_StringManipulations/C01_Concatination.java	(date 1685558100789)
+@@ -0,0 +1,28 @@
++package ch07_StringManipulations;
++
++public class C01_Concatination {
++
++    public static void main(String[] args) {
++
++        String name = "Batu";
++        String title = "SDET QA";
++        int age = 30;
++
++        System.out.println(name + title);
++        System.out.println("name.concat(title)= " + name.concat(title));
++
++        // int e cevirme
++
++        String number= "123456";
++        System.out.println("number = " + number);
++        System.out.println("Integer.parseInt(number +1) = " + (Integer.parseInt(number + 1) + 1));
++
++        System.out.println("name.concat(true + \":)\") = " + name.concat(true + ":)"));
++        System.out.println("name.concat(100 + \":)\") = " + name.concat(100 + ":)"));
++
++
++
++
++
++    }
++}
+Index: src/ch05_ifStatement_TernaryOperator/Ex01.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch05_ifStatement_TernaryOperator/Ex01.java b/src/ch05_ifStatement_TernaryOperator/Ex01.java
+new file mode 100644
+--- /dev/null	(date 1685383880655)
++++ b/src/ch05_ifStatement_TernaryOperator/Ex01.java	(date 1685383880655)
+@@ -0,0 +1,23 @@
++package ch05_ifStatement_TernaryOperator;
++
++import java.util.Scanner;
++
++public class Ex01 {
++    public static void main(String[] args) {
++
++        Scanner input= new Scanner(System.in);
++
++        System.out.println("bir sayi gir:");
++         int sayi=input.nextInt();
++
++         if( sayi>0) {
++             System.out.println("pozitif bir sayidir.");
++         } else if (sayi<0) {
++             System.out.println("negatif sayidir.");
++         } else{
++             System.out.println("girdiğiniz sayı sifirdir.");
++         }
++
++
++    }
++}
+Index: src/ch08_Loops/L01_ForLoop/C04_forLoop.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch08_Loops/L01_ForLoop/C04_forLoop.java b/src/ch08_Loops/L01_ForLoop/C04_forLoop.java
+new file mode 100644
+--- /dev/null	(date 1686687424983)
++++ b/src/ch08_Loops/L01_ForLoop/C04_forLoop.java	(date 1686687424983)
+@@ -0,0 +1,52 @@
++package ch08_Loops.L01_ForLoop;
++
++public class C04_forLoop {
++
++    public static void main(String[] args) {
++
++       /*
++        Interview Question
++        Girilen  100’den kucuk bir tamsayi için
++        1’den baslayarak girilen sayiya kadar tum sayilari print eden ama;
++        1  - Sayi 3’un kati ise sayi yerine "Java" yazdirin.
++        2  - Sayi 5’in kati ise sayi yerine "CAN'dır" yazdirin.
++        3  - Sayi hem 3’un hem 5’in kati ise sayi yerine "JavaCAN" print eden code create ediniz
++                */
++
++        for (int i = 0; i <100 ;i++) {
++
++            if (i %3==0 && i %5==0) {
++
++                System.out.println("JavaCan");
++
++            }else if (i %5==0) {
++
++                System.out.println("Can");
++
++            }else if ( i%3==0) {
++
++                System.out.println("java");
++
++            }else System.out.println(i);
++        }
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch06_SwitchStatement/C06_SwitchCase_ATM_Project.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch06_SwitchStatement/C06_SwitchCase_ATM_Project.java b/src/ch06_SwitchStatement/C06_SwitchCase_ATM_Project.java
+new file mode 100644
+--- /dev/null	(date 1685550498945)
++++ b/src/ch06_SwitchStatement/C06_SwitchCase_ATM_Project.java	(date 1685550498945)
+@@ -0,0 +1,71 @@
++package ch06_SwitchStatement;
++
++import java.util.Scanner;
++
++public class C06_SwitchCase_ATM_Project {
++    static String password = "12345";
++
++    public static void main(String[] args) {
++                /*
++        Bakıye (başlangıç bakıyesi 1000 tl) öğrenme, para yatırma ve cekme,
++         çıkış işlemlerinin yapıldıgı bir
++         ATM app. code create ediniz
++         */
++
++        Scanner input = new Scanner(System.in);
++        System.out.println("****** Java BAnk ATM sine Hosgeldiniz **************** ");
++
++        System.out.println("sifreni gir");
++        String sifre = input.nextLine();
++
++        if (sifre.equals(password)) {
++            System.out.println(" sifresniz eslesti devam edebilirsiniz");
++
++            System.out.println(" bakiye sorgulama için 1 \npara yatirma icin 2 \n" +
++                    "para cekme icin 3 \ncikis icin 4 tusuna basiniz");
++
++            int secim =input.nextInt();
++
++            int bakiye = 1000;
++             switch (secim) {
++
++                case 1 :
++                    System.out.println("bakiye = " + bakiye);
++                    break;
++                 case 2 :
++                     System.out.println("ne kadar yatirmak istersin");
++                    int yatrilanMiktar = input.nextInt();
++                    bakiye += yatrilanMiktar;
++                     System.out.println(" guncel bakiyeniz= " + bakiye);
++                     break;
++                 case 3 :
++                     System.out.println("ne kadar cekmek istersiniz");
++                     int cekilecekMiktar = input.nextInt();
++                     if (cekilecekMiktar<= bakiye) {
++                         bakiye -= cekilecekMiktar;
++                         System.out.println("cekilecekMiktar = " + cekilecekMiktar);
++                         System.out.println("kalan bakiyeniz = " + bakiye);
++                     }else System.out.println("bakiye yetersiz = " + bakiye);
++                     break;
++
++                 case 4 :
++                     System.out.println("cikis yapiyorsunuz yine bekleriz");
++                    break;
++
++                     default :
++                         System.out.println("hatali sifre girdiniz");
++
++
++             }
++
++
++
++        }else {
++            System.out.println("hatalı sifre iki hakkınız kaldi");
++        }
++
++
++
++
++    }
++}
+Index: src/ch09_Break_Continune/C05_OCA_Java.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch09_Break_Continune/C05_OCA_Java.java b/src/ch09_Break_Continune/C05_OCA_Java.java
+new file mode 100644
+--- /dev/null	(date 1686687425266)
++++ b/src/ch09_Break_Continune/C05_OCA_Java.java	(date 1686687425266)
+@@ -0,0 +1,28 @@
++package ch09_Break_Continune;
++
++public class C05_OCA_Java {
++
++    public static void main(String[] args) {
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch07_StringManipulations/C03_charAt.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch07_StringManipulations/C03_charAt.java b/src/ch07_StringManipulations/C03_charAt.java
+new file mode 100644
+--- /dev/null	(date 1685562295048)
++++ b/src/ch07_StringManipulations/C03_charAt.java	(date 1685562295048)
+@@ -0,0 +1,48 @@
++package ch07_StringManipulations;
++
++import java.util.Scanner;
++
++public class C03_charAt {
++
++    public static void main(String[] args) {
++
++      //  charAt() methodu parametre int olarak girilen index'deki char değerini return eder.
++        //  index değeri 0'dan başlar
++
++
++        String city = "Istanbul";
++        System.out.println("city.charAt(0) = " + city.charAt(0));
++
++        System.out.println("city.charAt(1) = " + city.charAt(1));
++
++        char cityBirincİndexElemanı = city.charAt(1);
++
++
++        char son = city.charAt(city.length() - 1);
++        System.out.println("son = " + son);
++
++        char sonHarf = city.charAt(city.length()-1);
++        System.out.println("sonHarf = " + sonHarf);
++
++        //RTE System.out.println("city.charAt(21) = " + city.charAt(21));
++
++        // Task-> istanbul izmir  girilen kelimenin kelimesinin ortadaki karakteri
++// print eden code create ediniz...
++
++
++        char ortaHarf = city.charAt(city.length()/2);
++        System.out.println("orta = " + ortaHarf);
++
++        Scanner input= new Scanner(System.in);
++        System.out.println("bir sehir girin");
++        String city2 = input.nextLine();
++
++        if (city.length()%2==0) {
++            System.out.println("senin sehrin ortası yok");
++        }else{
++            System.out.println("city.charAt(city.length()/2) = " + city.charAt(city.length() / 2));
++        }
++
++
++    }
++}
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision d7b33feb6ba0da9156c8fb421947ed068ff84bbb)
++++ b/.idea/misc.xml	(date 1686747324949)
+@@ -1,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: src/ch05_ifStatement_TernaryOperator/C01_ifStatement.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch05_ifStatement_TernaryOperator/C01_ifStatement.java b/src/ch05_ifStatement_TernaryOperator/C01_ifStatement.java
+new file mode 100644
+--- /dev/null	(date 1685382114218)
++++ b/src/ch05_ifStatement_TernaryOperator/C01_ifStatement.java	(date 1685382114218)
+@@ -0,0 +1,30 @@
++package ch05_ifStatement_TernaryOperator;
++
++public class C01_ifStatement {
++
++    public static void main(String[] args) {
++
++        int yasMeryem=35;
++        int yasAhmet= 33;
++        if (yasMeryem==yasAhmet) {
++            System.out.println("ayni yastasiniz");
++        }
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch05_ifStatement_TernaryOperator/Ex05.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch05_ifStatement_TernaryOperator/Ex05.java b/src/ch05_ifStatement_TernaryOperator/Ex05.java
+new file mode 100644
+--- /dev/null	(date 1685392315657)
++++ b/src/ch05_ifStatement_TernaryOperator/Ex05.java	(date 1685392315657)
+@@ -0,0 +1,40 @@
++package ch05_ifStatement_TernaryOperator;
++
++import java.util.Scanner;
++
++public class Ex05 {
++
++    public static void main(String[] args) {
++
++        //TASK -> girilen iki sayiyi seçilen dört işlemden birine uygulayıp sonucu print eden code crate ediniz
++
++        Scanner input= new Scanner(System.in);
++        System.out.println("birinci sayiyi giriniz:");
++        int sayi1 = input.nextInt();
++        System.out.println("ikinci sayiyi giriniz:");
++        int sayi2 = input.nextInt();
++
++        int toplam = sayi1 + sayi2;
++        int cikarma = sayi1 - sayi2;
++        int carpma = sayi1 * sayi2;
++        int bolme = sayi1 / sayi2;
++
++        System.out.println("hangiislem sonucunu görmek istersin toplama icin  1 e " +
++                " \n cikarma için 2 ye" + "\n carpma icin 3 e" + "\n bolme icin 4 e bas");
++
++        int secim = input.nextInt();
++
++        if (secim==1) {
++            System.out.println("toplam = " + toplam);
++        }else if (secim==2) {
++            System.out.println("cikarma = " + cikarma);
++        }else if (secim==3){
++            System.out.println("carpma = " + carpma);
++        }else if (secim==4){
++            System.out.println("bolme = " + bolme);
++        }else {
++            System.out.println("yanlis tuslama");
++
++        }
++    }
++}
+Index: src/ch07_StringManipulations/C11_valueOf_parseInt.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch07_StringManipulations/C11_valueOf_parseInt.java b/src/ch07_StringManipulations/C11_valueOf_parseInt.java
+new file mode 100644
+--- /dev/null	(date 1685736660385)
++++ b/src/ch07_StringManipulations/C11_valueOf_parseInt.java	(date 1685736660385)
+@@ -0,0 +1,22 @@
++package ch07_StringManipulations;
++
++public class C11_valueOf_parseInt {
++
++    public static void main(String[] args) {
++
++        // task -> string type verilen iki adet bagıs miktarını toplayan code create ediniz..
++
++        String bagis = "100";
++        String bagis1 = "200";
++
++        int sonuc = Integer.valueOf(bagis) + Integer.valueOf(bagis1);
++        System.out.println("sonuc = " + sonuc);
++
++        int b1 = Integer.parseInt(bagis);
++        System.out.println("b1 = " + b1);
++        int b2 = Integer.parseInt(bagis1);
++        System.out.println("b2 = " + b2);
++
++
++    }
++}
+Index: src/ch04_JavaOperators/jo01_ArithmeticOperators/C01_ArithmeticOperator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch04_JavaOperators/jo01_ArithmeticOperators/C01_ArithmeticOperator.java b/src/ch04_JavaOperators/jo01_ArithmeticOperators/C01_ArithmeticOperator.java
+new file mode 100644
+--- /dev/null	(date 1685040908864)
++++ b/src/ch04_JavaOperators/jo01_ArithmeticOperators/C01_ArithmeticOperator.java	(date 1685040908864)
+@@ -0,0 +1,16 @@
++package ch04_JavaOperators.jo01_ArithmeticOperators;
++
++public class C01_ArithmeticOperator {
++
++    public static void main(String[] args) {
++
++        int a =3;
++        int b =5;
++        int c =7;
++
++        System.out.println(b + a * c);
++        System.out.println(c - a / (c - b) + a * b);
++
++
++    }
++}
+Index: src/ch02_Datatypes_WrappesClass/C02_SwapInterwievQuestion.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch02_Datatypes_WrappesClass/C02_SwapInterwievQuestion.java b/src/ch02_Datatypes_WrappesClass/C02_SwapInterwievQuestion.java
+new file mode 100644
+--- /dev/null	(date 1684873068260)
++++ b/src/ch02_Datatypes_WrappesClass/C02_SwapInterwievQuestion.java	(date 1684873068260)
+@@ -0,0 +1,30 @@
++package ch02_Datatypes_WrappesClass;
++
++public class C02_SwapInterwievQuestion {
++    public static void main(String[] args) {
++
++        int num1=20;
++        int num2=34;
++        int temp;
++        System.out.println("num1 = " + num1);
++        System.out.println("num2 = " + num2);
++        System.out.println("temp işleminden sonra");
++
++
++        temp=num1;
++        num1=num2;
++        num2=temp;
++        System.out.println("num1 = " + num1);
++        System.out.println("num2 = " + num2);
++
++        System.out.println("üçüncü variable olmadan çözüm");
++
++        num1=num2+num1;
++        num2=num1-num2;
++        num1=num1-num2;
++        System.out.println("num1 = " + num1);
++        System.out.println("num2 = " + num2);
++
++
++    }
++}
+Index: src/ch07_StringManipulations/C05_startWith_endWith.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch07_StringManipulations/C05_startWith_endWith.java b/src/ch07_StringManipulations/C05_startWith_endWith.java
+new file mode 100644
+--- /dev/null	(date 1685644649804)
++++ b/src/ch07_StringManipulations/C05_startWith_endWith.java	(date 1685644649804)
+@@ -0,0 +1,46 @@
++package ch07_StringManipulations;
++
++import java.util.Scanner;
++
++public class C05_startWith_endWith {
++
++    public static void main(String[] args) {
++
++        /**
++         * startsWith()
++         *  Metnin bas kisminin istenilen dizi ile eslesip eslesmedigini kontrol eder. Sonucu boolean dir.
++         *  String'in basladigi characteri dogrular
++         * endsWith()
++         * Metnin son kisminin istenilen dizi ile eslesip eslesmedigini kontrol eder. Sonucu boolean dir.
++         */
++
++        String city = "Istanbul";
++
++        System.out.println("city.startsWith(\"t\",3) = " + city.startsWith("t", 3));
++        System.out.println("city.startsWith(\"t\",2) = " + city.startsWith("t", 2));
++
++        System.out.println("city.endsWith(\"l\") = " + city.endsWith("l"));
++        System.out.println("city.endsWith(\"bul\") = " + city.endsWith("bul"));
++
++        // iki string variable kontrol edilmesi
++
++        String str = "asd";
++        System.out.println("city.endsWith(str) = " + city.endsWith(str));
++
++        //Task -> girilen e-mail hesabının  @gmail.com ile bitmiyorsa "lütfen gmail hesabı giriniz"
++        // @gmail.com ile  bitiyorsa "hesabınız onaylandı" aksi durumda "geçerli hesap giriniz
++        // print edn code creae ediniz.
++
++        //note contains ile yaparsaniz true olur iceren herhangi bir karater girse true olur
++        //bunu endsWith() ile yapiniz
++
++        Scanner input = new Scanner(System.in);
++        System.out.println("gmailini gir");
++        String eMail= input.nextLine();
++
++        String check =eMail.endsWith("@gmail.com") ? "hesabınız onaylandı" : "geçerli hesap giriniz" ;
++        System.out.println(check);
++
++
++    }
++}
+Index: .idea/codeStyles/Project.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/codeStyles/Project.xml b/.idea/codeStyles/Project.xml
+--- a/.idea/codeStyles/Project.xml	(revision d7b33feb6ba0da9156c8fb421947ed068ff84bbb)
++++ b/.idea/codeStyles/Project.xml	(date 1686747324980)
+@@ -1,0 +1,7 @@
++<component name="ProjectCodeStyleConfiguration">
++  <code_scheme name="Project" version="173">
++    <ScalaCodeStyleSettings>
++      <option name="MULTILINE_STRING_CLOSING_QUOTES_ON_NEW_LINE" value="true" />
++    </ScalaCodeStyleSettings>
++  </code_scheme>
++</component>
+\ No newline at end of file
+Index: src/ch04_JavaOperators/jo04_LogicalOperators/C01_LogicalOperators.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch04_JavaOperators/jo04_LogicalOperators/C01_LogicalOperators.java b/src/ch04_JavaOperators/jo04_LogicalOperators/C01_LogicalOperators.java
+new file mode 100644
+--- /dev/null	(date 1685131690648)
++++ b/src/ch04_JavaOperators/jo04_LogicalOperators/C01_LogicalOperators.java	(date 1685131690648)
+@@ -0,0 +1,32 @@
++package ch04_JavaOperators.jo04_LogicalOperators;
++
++public class C01_LogicalOperators {
++    public static <b> void main(String[] args) {
++
++       boolean b1 = true;
++       boolean b2 = false;
++       int a=3;
++       int b= 5;
++        System.out.println("b1 & (a<b) = " + (b1 & (a < b)));
++        System.out.println("b2  & (a<b) = " + (b2 & (a < b)));
++
++
++        System.out.println("b1 || (a<b) = " + (b1 || (a < b)));
++
++        System.out.println("!b1 || (a>b) = " + (!b1 || (a > b)));
++
++        if (a<b) {
++            System.out.println(a * b);
++        }
++        if (a>b) {
++            System.out.println(a + b);
++        } else {
++            System.out.println(a - b);
++        }
++
++
++
++
++
++    }
++}
+Index: src/ch09_Break_Continune/C06_Task.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch09_Break_Continune/C06_Task.java b/src/ch09_Break_Continune/C06_Task.java
+new file mode 100644
+--- /dev/null	(date 1686687424967)
++++ b/src/ch09_Break_Continune/C06_Task.java	(date 1686687424967)
+@@ -0,0 +1,30 @@
++package ch09_Break_Continune;
++
++import java.util.Scanner;
++
++public class C06_Task {
++
++    public static void main(String[] args) {
++
++        // Task-> girilen 7 tamsayının 10 ile 20 arasındakileri hariç toplamını print eden code create ediniz.
++
++        Scanner scanner = new Scanner(System.in);
++        int sum = 0;
++        int count = 0;
++
++        while (count < 7) {
++            System.out.print("Bir tamsayı girin: ");
++            int num = scanner.nextInt();
++            if (num >= 10 && num <= 20){
++                count++;
++                continue;
++            }
++            sum += num;
++            count++;
++        }
++
++        System.out.println("sayının toplamı = " + sum);
++
++
++    }
++}
+Index: src/ch09_Break_Continune/C01_break.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch09_Break_Continune/C01_break.java b/src/ch09_Break_Continune/C01_break.java
+new file mode 100644
+--- /dev/null	(date 1686687424940)
++++ b/src/ch09_Break_Continune/C01_break.java	(date 1686687424940)
+@@ -0,0 +1,50 @@
++package ch09_Break_Continune;
++
++import java.util.Scanner;
++
++public class C01_break {
++    public static void main(String[] args) {
++
++        /*
++        break loop'u istenen yerden sonlandırmak için döngüyü kontrol edebiliriz.Bir loop'u, loop'un koşul bölümüne bağlı
++        kalmaksızın sona erdirmek için break komutu kullanılır. break komutu loop'a bağlı kod bloğunun
++        herhangi bir işlem satırında yer alabilir. Program kod bloğunda break komutu'nu görür görmez,
++        loop başlangıç koşulu sağlanmış olsa bile, loop'dan çıkar ve loop'dan sonra gelen ilk işlem
++        satırından çalışmasına devam eder. İç içe(nested) looplarda break komutu kullanıldığında sadece
++        içinde kullanıldığı loop'dan çıkışı sağlar:
++
++
++        temelde döngüden atlamak için kullanılır, çoğunlukla if-else deyimi ile kullanılır
++         */
++
++        // Task -> girilen bir mail hesabının @ sembolune kadar olan karakterlerni print eden code create ediniz.
++
++        Scanner input= new Scanner(System.in);
++        System.out.println(" email adresinizi girin:");
++        String mail=input.nextLine();
++
++        for (int i=0; i< mail.length(); i++) {
++            if (mail.charAt(i)=='@') {
++                break;
++
++            }
++            System.out.print(mail.charAt(i));
++        }
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch03_ScannerClass_TypeCasting/C01_ScannerClass.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch03_ScannerClass_TypeCasting/C01_ScannerClass.java b/src/ch03_ScannerClass_TypeCasting/C01_ScannerClass.java
+new file mode 100644
+--- /dev/null	(date 1684959140377)
++++ b/src/ch03_ScannerClass_TypeCasting/C01_ScannerClass.java	(date 1684959140377)
+@@ -0,0 +1,52 @@
++package ch03_ScannerClass_TypeCasting;
++
++import java.util.Scanner;
++
++public class C01_ScannerClass {
++
++    public static void main(String[] args) {
++
++        Scanner input = new Scanner(System.in);
++
++       // System.out.println("sifreni gir");
++
++       // String sifre = input.nextLine();
++
++       // System.out.println(sifre.replaceAll("\\d", "*"));
++
++       // System.out.println("karenin kenarını gir");
++       // int kenar = input.nextInt();
++       // int alan= kenar*kenar ;
++       // int cevre = kenar*4 ;
++       // System.out.println("alan = " + alan);
++       // System.out.println("cevre = " + cevre);12
++
++        //task
++
++       //System.out.println("gunluk cay sayini gir");
++       //int caysayisi = input.nextInt();
++
++       //System.out.println("caya kac seker atarsın");
++       //int sekerSayisi = input.nextInt();
++
++       //System.out.println("yılda ictigin cay sayısı= " + (365*caysayisi) +
++       //        "\n Yılda tukettıgı seker mıktarı="+ (caysayisi*sekerSayisi*1.7*365)/1000);
++
++        // task ismin ilk ve son harfini yazdirin
++
++        System.out.println("ismini gir");
++        String name = input.nextLine();
++        System.out.println("name = " + name);
++
++        char ilkHarf = name.charAt(0);
++        System.out.println("ilkHarf = " + ilkHarf);
++
++        System.out.println("name.length() = " + name.length());
++
++        char sonHarf = name.charAt(name.length()-1);
++        System.out.println("sonHarf = " + sonHarf);
++
++
++
++    }
++}
+Index: src/ch07_StringManipulations/C02_Length.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch07_StringManipulations/C02_Length.java b/src/ch07_StringManipulations/C02_Length.java
+new file mode 100644
+--- /dev/null	(date 1685559416209)
++++ b/src/ch07_StringManipulations/C02_Length.java	(date 1685559416209)
+@@ -0,0 +1,34 @@
++package ch07_StringManipulations;
++
++public class C02_Length {
++
++    public static void main(String[] args) {
++
++                /*
++        length() methodu girilrn string'in uzunluğunu:içinde bulunan karakter sayısını return eder
++        butun karakterleri(boşluk vs) sayıp adedini verir
++         */
++        String str = "Clarusway ile java";
++        System.out.println("str.length() = " + str.length());
++
++        int lengthofStr= str.length();
++        System.out.println("lengthofStr= " + lengthofStr);
++
++        String str1= "";
++        System.out.println("str1.length() = " + str1.length());
++        String str2= " ";
++        System.out.println("str2.length() = " + str2.length());
++        String str3= null;
++        //System.out.println("str3.length() = " + str3.length());
++        //System.out.println("str3.concat(str2) = " + str3.concat(str2));
++
++        String str4 = "null";
++        System.out.println("str4.length() = " + str4.length());
++
++        String str5 ;
++        //System.out.println("str4.concat(str5) = " + str4.concat(str5));
++
++
++
++    }
++}
+Index: src/ch07_StringManipulations/C06_substring.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch07_StringManipulations/C06_substring.java b/src/ch07_StringManipulations/C06_substring.java
+new file mode 100644
+--- /dev/null	(date 1685648005378)
++++ b/src/ch07_StringManipulations/C06_substring.java	(date 1685648005378)
+@@ -0,0 +1,43 @@
++package ch07_StringManipulations;
++
++import java.util.Scanner;
++
++public class C06_substring {
++
++    public static void main(String[] args) {
++
++        /**
++substring()
++Metin icinde, istenilen araliktaki bir parcasina ya da butunune ulasilabilir. Sonuc ise String dir.
++substring(i)->Method'a parametre olarak girilen  index'den sona kadar olan parcayi return eder
++
++substring(baslangicIndexi, bitisIndexi)->Method'a parametre olarak girilen  baslangicIndexi'den bitis
++indexi'e kadar parçayı return eder
++baslangic indexi ==> inclusive/dahil
++bitis indexi ==> eclusive/haric
++ */
++
++        String str = "Çalıştıkça daha çok şey bilmediğimizi farkediyorum";
++        System.out.println("str.substring(0,5) = " + str.substring(0, 5));
++
++        System.out.println("str.substring(str.length() -10) = " + str.substring(str.length() - 10));
++
++        System.out.println("str.substring(0,11) = " + str.substring(0, 11));
++        System.out.println("str.substring(0,1) = " + str.substring(0, 1));
++
++
++        Scanner input = new Scanner(System.in);
++        System.out.println(" 4 harfli bir kelime giirin");
++        String kelime= input.nextLine();
++
++        System.out.print("kelime.substring(kelime.length()-1) = " + kelime.substring(kelime.length() - 1));
++        System.out.print(kelime.charAt(kelime.length() - 2));
++        //System.out.println(kelime.charAt(kelime.length() -2 ));
++        System.out.print(kelime.substring(1,2));
++        System.out.println(kelime.substring(0,1));
++
++
++
++
++    }
++}
+Index: src/ch07_StringManipulations/C08_equals_equalsIgnoreCase.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch07_StringManipulations/C08_equals_equalsIgnoreCase.java b/src/ch07_StringManipulations/C08_equals_equalsIgnoreCase.java
+new file mode 100644
+--- /dev/null	(date 1685731359655)
++++ b/src/ch07_StringManipulations/C08_equals_equalsIgnoreCase.java	(date 1685731359655)
+@@ -0,0 +1,52 @@
++package ch07_StringManipulations;
++
++public class C08_equals_equalsIgnoreCase {
++    public static void main(String[] args) {
++
++        /** equals()
++         * 2 String metnin birbirine esit olup olmadigina bakar. büyük küçük harf farkı vardır. Sonuc boolean dir.
++         *
++         * equalsIgnorecase()
++         * equals() ile ayni islevi gorur, tek farki buyuk kucuk harfe duyarliligi yoktur. Sonuc boolean dir.
++         */
++        /**
++         * str.toLowerCase() verilen String'in tamamini kucuk harfe cevirir
++         * str.toUpperCase() verilen String'in tamamini buyuk harfe cevirir
++         */
++
++        String str1 = "Merhaba";
++        String str2 = "merhaba";
++
++        System.out.println("str1 replace öncesi =" + str1);
++        System.out.println("str1.replace(\"\\\\w\" , \"*\") = " + str1.replaceAll("\\w", "*"));
++
++        System.out.println(str1.equals(str2));
++        System.out.println(str2.equals(str1));
++
++        System.out.println(str1.equalsIgnoreCase(str2));
++
++        str2= "Merhaba";
++
++        System.out.println(str1.equals(str2));
++
++        System.out.println("       ");
++
++        String s1 = "ahmet";
++        String s2 = "ahmet";
++
++        String s3 = new String("zeynep");
++        String s4 = new String("zeynep");
++
++        System.out.println(s1 == s2);
++        System.out.println(s1.equals(s2));
++        System.out.println(s3 == s4);
++        System.out.println(s3.equals(s4));
++        System.out.println(s3);
++        System.out.println(s4);
++
++        System.out.println(s1 == s3);
++        System.out.println(s1.equals(s3));
++
++
++    }
++}
+Index: src/ch03_ScannerClass_TypeCasting/C02_TypeCasting.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch03_ScannerClass_TypeCasting/C02_TypeCasting.java b/src/ch03_ScannerClass_TypeCasting/C02_TypeCasting.java
+new file mode 100644
+--- /dev/null	(date 1685040745241)
++++ b/src/ch03_ScannerClass_TypeCasting/C02_TypeCasting.java	(date 1685040745241)
+@@ -0,0 +1,63 @@
++
++package ch03_ScannerClass_TypeCasting;
++
++import java.util.Scanner;
++
++public class C02_TypeCasting {
++
++    public static void main(String[] args) {
++
++        boolean basariliMi = true;
++       // String basari = basariliMi; calişmaz
++        String basari = String.valueOf(basariliMi);// boolean stringe cevrildi
++        System.out.println("basari = " + basari);
++
++        double d = 17;
++        System.out.println("d = " + d);
++
++        int sayi1 =33;
++        int sayi2 =4;
++
++        System.out.println("sayi1/sayi2 = " + sayi1 / sayi2);
++
++
++        byte by =127;
++        int number= by;
++
++        int num =123;
++        double d1=14;
++        double d2=d1/num;
++        System.out.println("d2 = " + d2);
++
++        double db1 =14.66;
++        int i = (int) db1;
++        System.out.println("i = " + i);
++
++
++        int num3 = 150;
++        byte by1= (byte) num3;
++        System.out.println("by1 = " + by1);
++
++        // task
++
++        Scanner input = new Scanner(System.in);
++        System.out.println("bir karakter giriniz:");
++        char ch = input.nextLine().charAt(0);
++        System.out.println("ch = " + (ch + 0));
++
++        String str ="a";
++        System.out.println("str.hashCode() = " + str.hashCode());// tek karakter ile çalışır
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch05_ifStatement_TernaryOperator/C02_ifStatement.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch05_ifStatement_TernaryOperator/C02_ifStatement.java b/src/ch05_ifStatement_TernaryOperator/C02_ifStatement.java
+new file mode 100644
+--- /dev/null	(date 1685383687250)
++++ b/src/ch05_ifStatement_TernaryOperator/C02_ifStatement.java	(date 1685383687250)
+@@ -0,0 +1,28 @@
++package ch05_ifStatement_TernaryOperator;
++
++import java.util.Scanner;
++
++public class C02_ifStatement {
++    public static void main(String[] args) {
++
++        Scanner input= new Scanner(System.in);
++        int yas= input.nextInt();
++        if(yas<18){
++
++        }
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch07_StringManipulations/C10_isEmpty.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch07_StringManipulations/C10_isEmpty.java b/src/ch07_StringManipulations/C10_isEmpty.java
+new file mode 100644
+--- /dev/null	(date 1685735197818)
++++ b/src/ch07_StringManipulations/C10_isEmpty.java	(date 1685735197818)
+@@ -0,0 +1,30 @@
++package ch07_StringManipulations;
++
++import java.util.Scanner;
++
++public class C10_isEmpty {
++
++    public static void main(String[] args) {
++
++        String hi = "Hello";
++        System.out.println("hi.isEmpty() = " + hi.isEmpty());
++
++        //Task->  2: Girilen  isim mutlaka space'den farkli en az 1 character icermediğini kontrol eden code
++        // create ediniz
++
++        Scanner scanner = new Scanner(System.in);
++
++        System.out.print("İsim girin: ");
++        String name = scanner.nextLine();
++
++        System.out.println("name.isEmpty() = " + name.isEmpty());
++        String sonuc = name.isEmpty() ? "isim giriniz" : "devam edebilirsiniz";
++        System.out.println(sonuc);
++
++        String sonuc1= name.isBlank() ? "isim giriniz" : "devam edebilirsiniz";
++
++        System.out.println(sonuc1);
++
++
++    }
++}
+Index: src/ch09_Break_Continune/C07_Task.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch09_Break_Continune/C07_Task.java b/src/ch09_Break_Continune/C07_Task.java
+new file mode 100644
+--- /dev/null	(date 1686687424905)
++++ b/src/ch09_Break_Continune/C07_Task.java	(date 1686687424905)
+@@ -0,0 +1,47 @@
++package ch09_Break_Continune;
++
++import java.util.Scanner;
++
++public class C07_Task {
++    public static void main(String[] args) {
++
++        // task -> girilen bir ifadedeki c karakterine kadar a karakter sayısını print eden code create ediniz.
++
++        Scanner input = new Scanner(System.in);
++        System.out.print("Bir ifade girin: ");
++        String ifade = input.nextLine();
++
++        int count=0;
++
++        for (int i = 0; i < ifade.length(); i++) {
++            char character = ifade.charAt(i);
++            if (character == 'c') {
++                break;
++            }
++            if (character == 'a') {
++                count++;
++            }
++        }
++
++        System.out.println("'c' karakterine kadar olan 'a' karakter sayısı: " + count);
++
++        input.close();
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch05_ifStatement_TernaryOperator/C06_NestedTernaryOperator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch05_ifStatement_TernaryOperator/C06_NestedTernaryOperator.java b/src/ch05_ifStatement_TernaryOperator/C06_NestedTernaryOperator.java
+new file mode 100644
+--- /dev/null	(date 1685389530213)
++++ b/src/ch05_ifStatement_TernaryOperator/C06_NestedTernaryOperator.java	(date 1685389530213)
+@@ -0,0 +1,45 @@
++package ch05_ifStatement_TernaryOperator;
++
++import java.util.Scanner;
++
++public class C06_NestedTernaryOperator {
++
++    public static void main(String[] args) {
++                /*
++         TASK :
++        Kullanicidan bir sayi aliniz
++        Sayi 0 dan buyuk esit ise //nester burada devereye giriyor
++        10 dan kucuk olup olmadigini kontrol ediniz.
++
++        10 dan kucuk ise ekrana "Rakam" yazdiriniz degilse "Pozitif Sayi" yazdiriniz.
++
++        Sayi o dan kucuk ise ekrana "Negatif Sayi" yazdiriniz.
++         */
++
++        Scanner input = new Scanner(System.in);
++        System.out.println("bir sayi giriniz:");
++        int sayi = input.nextInt();
++
++        System.out.println( sayi>=0 ? ( sayi<10 ? "rakam" : "Pozitif Sayi") :"Negatif Sayi"  );
++
++                 /*
++        Kullanıcıdan alacağı ürün miktarını ve ürünün birim fiyatını alın.
++         Eğer urun miktarı 100 den fazla ise %33  indirim yapıp
++               ödemesi gereken toplam miktarı print eden code create ediniz.
++        */
++
++        System.out.println("ürün miktarini giriniz:");
++        int urun = input.nextInt();
++        System.out.println("urun birim fiyatı gir:");
++        int urunFiyat = input.nextInt();
++        double fatura = (urun>100 ? (urunFiyat*urun*0.67) : urun*urunFiyat);
++        System.out.println("fatura = " + fatura);
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch06_SwitchStatement/C05_SwitchCase.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch06_SwitchStatement/C05_SwitchCase.java b/src/ch06_SwitchStatement/C05_SwitchCase.java
+new file mode 100644
+--- /dev/null	(date 1685546880658)
++++ b/src/ch06_SwitchStatement/C05_SwitchCase.java	(date 1685546880658)
+@@ -0,0 +1,53 @@
++package ch06_SwitchStatement;
++
++import java.util.Scanner;
++
++public class C05_SwitchCase {
++
++    public static void main(String[] args) {
++
++        Scanner scan = new Scanner(System.in);
++        System.out.println("ay sayısını giriniz");
++        int aySayi = scan.nextInt();
++
++        switch (aySayi) {
++            case 12:
++
++            case 1:
++
++            case 2:
++                System.out.println("kış mevsimi");
++                break;
++
++            case 3:
++
++            case 4:
++
++            case 5:
++
++
++                System.out.println("ilkbahar");
++                break;
++            case 6:
++
++            case 7:
++
++            case 8:
++
++                System.out.println("yaz");
++                break;
++            case 9:
++
++            case 10:
++
++            case 11:
++
++                System.out.println("sonbahar");
++                break;
++            default:
++                System.out.println(" 1 ile 12 arasi bir sayi giriniz");
++
++
++        }
++    }
++}
+Index: src/ch08_Loops/L02_WhileLoop/C01_whileLoop.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch08_Loops/L02_WhileLoop/C01_whileLoop.java b/src/ch08_Loops/L02_WhileLoop/C01_whileLoop.java
+new file mode 100644
+--- /dev/null	(date 1686687424958)
++++ b/src/ch08_Loops/L02_WhileLoop/C01_whileLoop.java	(date 1686687424958)
+@@ -0,0 +1,110 @@
++package ch08_Loops.L02_WhileLoop;
++
++import java.util.Scanner;
++
++public class C01_whileLoop {
++
++    public static void main(String[] args) {
++
++        // task01-> 11 den 20'ye kadar olan tamasayıları print eden code create ediniz...
++
++        System.out.println("*****for ile cozum******");
++
++        for (int i =11; i <20 ; i++) {
++            System.out.print(i + " ");
++        }
++        System.out.println();
++
++        System.out.println("**** whilw loop ile cozum ****");
++
++        int sayi = 11;
++
++        while (sayi<20) {
++            System.out.print(sayi+ " ");
++            sayi++;
++        }
++
++        System.out.println();
++
++        //task02-> 7 kere javaCAN print eden code create ediniz...
++
++        int i =0;
++
++        while (i<7) {
++            System.out.println("javaCan");
++            i++;
++
++        }
++
++        // task03-> 2 basamaklı tek sayıları yanyana print eden code create ediniz
++
++        int a =11;
++
++        while ( a<100) {
++                System.out.print(a +" ");
++                a+=2;
++
++        }
++        System.out.println();
++        System.out.println("diğer cozum");
++
++        int b =11;
++
++        while ( b<100) {
++           if( b%2==1) {
++               System.out.print(b +" ");
++           }
++            b+=2;
++        }
++        System.out.println();
++
++        // task04-> girilen metni while loop ile  tersden print eden code create ediniz
++
++        Scanner input = new Scanner(System.in);
++        System.out.println("bir seyler yazin");
++        String cumle = input.nextLine();
++
++        int uzunluk = cumle.length() -1;
++        while (uzunluk >= 0) {
++            System.out.println(cumle.charAt(uzunluk));
++            uzunluk--;
++
++        }
++
++        // task-> girilen tamsayını pozitif tam bolen sayısını print eden code create ediniz...
++        // 20 -> 1,2,4,5,10,20: 20'nin 6 tane tam böleni var
++        // 30 -> 1,2,3,5,6,10,15,30: 30'nin 8 tane tam böleni var
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch08_Loops/L01_ForLoop/C03_nested_forLoop.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch08_Loops/L01_ForLoop/C03_nested_forLoop.java b/src/ch08_Loops/L01_ForLoop/C03_nested_forLoop.java
+new file mode 100644
+--- /dev/null	(date 1686687425255)
++++ b/src/ch08_Loops/L01_ForLoop/C03_nested_forLoop.java	(date 1686687425255)
+@@ -0,0 +1,49 @@
++package ch08_Loops.L01_ForLoop;
++
++public class C03_nested_forLoop {
++
++    public static void main(String[] args) {
++
++                /*
++        eger bir döngünün baody'sinde başka  bir döngü bulunuyorsa bu tür döngülere nested-loop->
++        içiçe döngü denir
++        İç döngü dış döngünün her adımda tekrar çalışır.
++        içiçe döngülerde en içteki döngü en önce çalışır..
++         */
++
++        for (int kat = 0; kat <=10 ; kat++) {
++
++            System.out.println("suan bulundugun kat = " + kat);
++
++            for (int daire = 1 ; daire <=4 ; daire++) {
++
++                System.out.println("daire = " + daire );
++
++
++            }
++        }
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch04_JavaOperators/jo02_AssignmentOperators/C01_AtamaOperator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch04_JavaOperators/jo02_AssignmentOperators/C01_AtamaOperator.java b/src/ch04_JavaOperators/jo02_AssignmentOperators/C01_AtamaOperator.java
+new file mode 100644
+--- /dev/null	(date 1685044386593)
++++ b/src/ch04_JavaOperators/jo02_AssignmentOperators/C01_AtamaOperator.java	(date 1685044386593)
+@@ -0,0 +1,24 @@
++package ch04_JavaOperators.jo02_AssignmentOperators;
++
++public class C01_AtamaOperator {
++
++    public static void main(String[] args) {
++
++        int yas = 33;
++        yas += 5;
++        yas *= 2;
++        yas /= 2;
++        System.out.println("yas = " + yas);
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
+Index: src/ch04_JavaOperators/jo01_ArithmeticOperators/C03_RakamlarToplamı.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch04_JavaOperators/jo01_ArithmeticOperators/C03_RakamlarToplamı.java b/src/ch04_JavaOperators/jo01_ArithmeticOperators/C03_RakamlarToplamı.java
+new file mode 100644
+--- /dev/null	(date 1685132722037)
++++ b/src/ch04_JavaOperators/jo01_ArithmeticOperators/C03_RakamlarToplamı.java	(date 1685132722037)
+@@ -0,0 +1,41 @@
++package ch04_JavaOperators.jo01_ArithmeticOperators;
++
++import java.util.Scanner;
++
++public class C03_RakamlarToplamı {
++
++    public static void main(String[] args) {
++
++        Scanner input = new Scanner(System.in);
++        System.out.println("3 basamakli bir sayı giriniz:");
++
++        int sayi = input.nextInt();
++        int a = sayi % 10;
++        sayi /= 10;
++        int b = sayi % 10;
++        int c = sayi / 10;
++
++        int toplam =a+b+c;
++
++        System.out.println("toplam = " + toplam);
++
++        Scanner scanner = new Scanner(System.in);
++        System.out.print("Yılı girin: ");
++        int yil = scanner.nextInt();
++
++        if (yil % 4 == 0) {
++            if (yil % 100 == 0) {
++                if (yil % 400 == 0) {
++                    System.out.println(yil + " bir artık yıldır.");
++                } else {
++                    System.out.println(yil + " bir artık yıl değildir.");
++                }
++            } else {
++                System.out.println(yil + " bir artık yıldır.");
++            }
++        } else {
++            System.out.println(yil + " bir artık yıl değildir.");
++        }
++
++    }
++}
+Index: src/ch05_ifStatement_TernaryOperator/Ex04.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ch05_ifStatement_TernaryOperator/Ex04.java b/src/ch05_ifStatement_TernaryOperator/Ex04.java
+new file mode 100644
+--- /dev/null	(date 1685451713764)
++++ b/src/ch05_ifStatement_TernaryOperator/Ex04.java	(date 1685451713764)
+@@ -0,0 +1,50 @@
++package ch05_ifStatement_TernaryOperator;
++
++import java.util.Scanner;
++
++public class Ex04 {
++
++    public static void main(String[] args) {
++
++        //TASK -> girilen bir ifadenin ilk karakterinin harf  olup olmadığını  kontrol eden code create ediniz..
++
++       Scanner input= new Scanner(System.in);
++       System.out.println("bir ifade giriniz:");
++       char  ilkKarakter = input.next().charAt(0);
++//
++       if (ilkKarakter >= 'A' && ilkKarakter <= 'Z'  || ilkKarakter >= 'a' && ilkKarakter <= 'a') {
++           System.out.println("giridigin ifadenin ilk karakteri harftir");
++       }else {
++           System.out.println("giridigin ifadenin ilk karakteri harf degildir");
++       }
++
++
++
++      //Scanner input = new Scanner(System.in);
++      //System.out.println("bir ifade gir");
++
++      // char ilkKarakter = input.next().charAt(0);//girilen ifadenin ilk karakteri charAt(0) ile alinip atandi
++      // //onemli hatirlatma char variable lar matemtiksel ve karsilaastirmali islemlerde ASCII degerine gore islem yapar
++      // //bu ne demek ilkKarakter >= 'A' && ilkKarakter <= 'Z'    => ilk karakter A ile Z arasinda mi
++      // //zeynep hanimdan => ilk karakter a ascii değerinden büyük z ascii değerinden küçükse harftir
++
++      // if (ilkKarakter >= 'A' && ilkKarakter <= 'Z' || ilkKarakter >= 'a' && ilkKarakter <= 'z' ){
++      //     System.out.println("girdigin ifadenin ilk karakteri harf tir " +ilkKarakter);
++      // }
++      // else System.out.println("giridigin ifadenin ilk karakteri harf degildir " +ilkKarakter);
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++    }
++}
